@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renomear e Baixar Arquivos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Renomear Arquivos</h1>
+    <label for="fileInput" type="slcLabel">Selecionar Arquivos</label>
+    <input type="file" id="fileInput" multiple>
+    <div class="file-count" id="fileCount">Nenhum arquivo selecionado.</div>
+
+    <div class="options">
+      <label>
+        <input type="radio" name="renameOption" value="prefix" checked> Usar prefixo
+      </label>
+      <input type="text" id="prefixInput" placeholder="Digite o prefixo (ex: arquivo_)">
+      <label>
+        <input type="radio" name="renameOption" onclick="clearRadio()" value="sequential"> Apenas números sequenciais
+      </label>
+    </div>
+
+    <button onclick="renameFiles()">Renomear e Baixar</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>

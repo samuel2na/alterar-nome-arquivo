@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ece2e2; //#f4f4f4;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  width: 300px;
+}
+
+h1 {
+  font-size: 24px;options
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  background-color: #1c82ee;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+label:hover {
+  background-color: #0056b3;
+}
+
+label[type="slcLabel"]{
+  background-color: #ea8032;
+}
+
+label[type="slcLabel"]:hover {
+  background-color: #dd650c;
+}
+
+
+.file-count {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.options {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 14px;
+  text-align: left;
+  color: #333;
+  width: 100%;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+input[type="text"] {
+  padding: 5px;
+  font-size: 14px;
+  width: 14.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
