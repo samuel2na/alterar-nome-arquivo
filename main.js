@@ -1,6 +1,7 @@
 const fileInput = document.getElementById("fileInput");
 const fileCountDiv = document.getElementById("fileCount");
 const prefixInput = document.getElementById("prefixInput");
+const nroInicial = document.getElementById("nroInicial");
 const renameOptions = document.getElementsByName("renameOption");
 
 fileInput.addEventListener("change", function () {
@@ -15,14 +16,15 @@ fileInput.addEventListener("change", function () {
 function getSelectedRenameOption() {
   for (let i = 0; i < renameOptions.length; i++) {
     if (renameOptions[i].checked) {
-      if(renameOptions[i].value == "sequential") { prefixInput.value = ""; };
       return renameOptions[i].value;
     }
   }
 }
 
-function clearRadio(){
-  prefixInput.value = "";
+function clearRadio(e){
+  let chek = e.target.value;
+  if (chek == "sequential") { prefixInput.value = ""; }
+  else if(chek == "prefix") { nroInicial.value = ""; };
 }
 
 function renameFiles() {
@@ -37,6 +39,11 @@ function renameFiles() {
   const zip = new JSZip(); // Usando a biblioteca JSZip para criar um ZIP
   const prefix = prefixInput.value || "arquivo_";
 
+  let seq = 0;
+  if (selectedOption === "sequential" && nroInicial.value != ""){
+    seq = parseInt(nroInicial.value,10) - 1;
+  }
+
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
     let newName;
@@ -46,8 +53,13 @@ function renameFiles() {
         file.name.lastIndexOf(".")
       )}`;
     } else if (selectedOption === "sequential") {
-      newName = `${i + 1}${file.name.substring(file.name.lastIndexOf("."))}`;
+      newName = `${seq + 1}${file.name.substring(file.name.lastIndexOf("."))}`;
     }
+
+    seq += 1;
+
+    nroInicial.value = "";
+    prefixInput.value = "";
 
     zip.file(newName, file);
   }

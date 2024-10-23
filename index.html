@@ -18,12 +18,13 @@
 
     <div class="options">
       <label>
-        <input type="radio" name="renameOption" value="prefix" checked> Usar prefixo
+        <input type="radio" name="renameOption" onclick="clearRadio(event)" value="prefix" checked> Usar prefixo
       </label>
       <input type="text" id="prefixInput" placeholder="Digite o prefixo (ex: arquivo_)">
       <label>
-        <input type="radio" name="renameOption" onclick="clearRadio()" value="sequential"> Apenas números sequenciais
+        <input type="radio" name="renameOption" onclick="clearRadio(event)" value="sequential"> Apenas números sequenciais
       </label>
+      <input type="number" id="nroInicial" placeholder="Iniciando com o número..." title="informe o número que os arquivo devem começar (opcional)">
     </div>
 
     <button onclick="renameFiles()">Renomear e Baixar</button>

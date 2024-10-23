@@ -81,7 +81,7 @@ button:hover {
   background-color: #218838;
 }
 
-input[type="text"] {
+input[type="text"], input[type="number"]  {
   padding: 5px;
   font-size: 14px;
   width: 14.5rem;
