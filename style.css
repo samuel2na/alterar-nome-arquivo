@@ -58,8 +58,8 @@ label[type="slcLabel"]:hover {
 }
 
 .options {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
   font-size: 14px;
   text-align: left;
   color: #333;
@@ -87,5 +87,5 @@ input[type="text"], input[type="number"]  {
   width: 14.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }

@@ -10,24 +10,34 @@
 
 <body>
 
-  <div class="container">
-    <h1>Renomear Arquivos</h1>
-    <label for="fileInput" type="slcLabel">Selecionar Arquivos</label>
-    <input type="file" id="fileInput" multiple>
-    <div class="file-count" id="fileCount">Nenhum arquivo selecionado.</div>
+  <div>
+    <!-- <div>teste</div> -->
+  
+    <div class="container">
+      <h1>Renomear Arquivos</h1>
+      <label for="fileInput" type="slcLabel">Selecionar Arquivos</label>
+      <input type="file" id="fileInput" multiple>
+      <div class="file-count" id="fileCount">Nenhum arquivo selecionado.</div>
 
-    <div class="options">
-      <label>
-        <input type="radio" name="renameOption" onclick="clearRadio(event)" value="prefix" checked> Usar prefixo
-      </label>
-      <input type="text" id="prefixInput" placeholder="Digite o prefixo (ex: arquivo_)">
-      <label>
-        <input type="radio" name="renameOption" onclick="clearRadio(event)" value="sequential"> Apenas números sequenciais
-      </label>
-      <input type="number" id="nroInicial" placeholder="Iniciando com o número..." title="informe o número que os arquivo devem começar (opcional)">
+      <div class="options">
+        <label>
+          <input type="radio" name="renameOption" onclick="clearRadio(event)" value="prefix" checked> Usar prefixo
+        </label>
+        <input type="text" id="prefixInput" placeholder="Digite o prefixo (ex: arquivo_)">
+        <label>
+          <input type="radio" name="renameOption" onclick="clearRadio(event)" value="sequential"> Apenas números sequenciais
+        </label>
+        <input type="number" id="nroInicial" placeholder="Iniciando com o número..." title="informe o número que o(s) arquivo(s) deve(m) começar (opcional)">
+        <br>
+        <span>
+          Mudar para extensão:
+        </span>
+        <input type="text" id="extensao" placeholder="(ex: jpg, jpeg, png, doc, xml, etc...)"
+          title="informe a extensão que para renomear o(s) arquivo(s)">
+      </div>
+      <button onclick="renameFiles()">Renomear e Baixar</button>
     </div>
-
-    <button onclick="renameFiles()">Renomear e Baixar</button>
+    
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>

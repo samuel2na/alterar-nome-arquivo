@@ -3,6 +3,7 @@ const fileCountDiv = document.getElementById("fileCount");
 const prefixInput = document.getElementById("prefixInput");
 const nroInicial = document.getElementById("nroInicial");
 const renameOptions = document.getElementsByName("renameOption");
+const extensao = document.getElementById("extensao");
 
 fileInput.addEventListener("change", function () {
   const files = fileInput.files;
@@ -46,14 +47,21 @@ function renameFiles() {
 
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
-    let newName;
+    let newName, newExtensao;
+
+    if (extensao.value != "") {
+      console.log(extensao.value);
+      newExtensao = "." + extensao.value.replace(".", "");
+      console.log(newExtensao);
+    } else {
+      newExtensao = `${file.name.substring(file.name.lastIndexOf("."))}`;
+    }
 
     if (selectedOption === "prefix") {
-      newName = `${prefix}${i + 1}${file.name.substring(
-        file.name.lastIndexOf(".")
-      )}`;
-    } else if (selectedOption === "sequential") {
-      newName = `${seq + 1}${file.name.substring(file.name.lastIndexOf("."))}`;
+      newName = `${prefix}${i + 1}${newExtensao}`;
+    } 
+    else if (selectedOption === "sequential") {
+      newName = `${seq + 1}${newExtensao}`;
     }
 
     seq += 1;
